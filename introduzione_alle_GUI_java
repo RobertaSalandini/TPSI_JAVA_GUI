@@ -1,0 +1,23 @@
+import javax.swing.*; 
+//importa tutte le classi del pacchetto swing, parte del framework swing, utilizzato per creare le interfacce grafiche.
+public class MiaApp{
+   public static void main(String[]args){
+   //metodo principale del programma, punto d'ingresso dell'applicazione. il codice all'interno verrà eseguito all'avvio.
+   
+   JFrame frame = new JFrame("la mia app GUI");  
+     //creazione finestra jframe con il titolo che apparirà all'avvio 
+    JButton button= new JButton("Clicca qui.");
+    //creazione di un oggetto JButton, scomponente swing per creare pulsanti
+    
+        frame.add(button); 
+        //aggiungere l'oggetto alla finestra JFrame "frame".
+        frame.setSize(300, 200);
+        // impostare le dimensioni della finestra
+        
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //Chiusura della finsetra.imposta il comportamento quando l'utente richiede la chiusura della finestra.
+        //in output: quando si clicca sulla x.
+        frame.setVisible(true); 
+        //mostra la finestra
+   }
+}
