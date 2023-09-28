@@ -35,3 +35,27 @@ public class EsempioGUI{
       
     }
 }
+
+
+CONTENITORE: struttura che può contenere altri oggetti o elementi , come componenti grafici in un' interfaccia utente o elementi in una lista . Utilizzati spesso per organizzare strutture dati o componenti all'interno di un'applicazione
+i contenitori sono rappresentati da classi come JFrame, JButton , JPanel ecc..
+che possono contenere elementi swing come i button, label ecc..
+Pannello JPanel : JPanel  è un contenitore leggero utilizzato per organizzare i componenti all'interno di un' interfaccia grafica.
+Attributo setBackground : attributo alla classe JFrame  o JPanel che imposta un colore specifico di sfondo alla finestra.
+
+
+import javax.swing.*;
+import java.awt.*; 
+public class FinestraConBottoni{
+    public static void main(String [] args){
+    JFrame frame= new JFrame("Finestra con bottoni");
+    frame.setSize(500, 400);
+    JPanel panel=new JPanel();//contenitore
+    JButton button1=new JButton("Roberta");
+    JButton button2= new JButton("Salandini");
+panel.add(button1);
+panel.add(button2);
+panel.setBackground(Color.red);
+frame.add(panel);
+frame.setVisible(true);
+    }}
