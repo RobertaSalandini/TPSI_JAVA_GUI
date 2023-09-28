@@ -21,3 +21,17 @@ public class MiaApp{
         //mostra la finestra
    }
 }
+
+
+import javax.swing.*; 
+public class EsempioGUI{
+    public static void main(String args[]){
+        JFrame frame=new JFrame("La mia GUI"); 
+        JButton button= new JButton("Ciao!");        
+        frame.add(button);
+         frame.setSize(500, 400);
+         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true); 
+      
+    }
+}
