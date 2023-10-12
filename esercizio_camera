@@ -1,0 +1,62 @@
+import javax.swing.*; 
+public class CameraGUI {
+    public static void main(String[]args)
+    {
+     JFrame frame=new JFrame("Prenotazione hotel");
+     frame.setSize(500,500);
+     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     frame.setLayout(null);
+
+     JLabel label = new JLabel("Tipo di camera: ");
+     label.setBounds(10,10,80,20);
+     frame.add(label);
+
+     String[] comboItems={"Suite","Famiglia","Standard"};
+     JComboBox<String> comboBox = new
+    JComboBox<>(comboItems);//dropdown
+    comboBox.setBounds(10,40,150,20);
+    frame.add(comboBox);
+
+     JLabel label2 = new JLabel("Preferenze: ");
+     label2.setBounds(10,70,100,20);
+     frame.add(label2);
+
+     JCheckBox checkBox1=new JCheckBox("Parcheggio;", null, false);
+     checkBox1.setBounds(10,100,300,20);
+    frame.add(checkBox1);
+    JCheckBox checkBox2=new JCheckBox("Colazione.", null, false);
+     checkBox2.setBounds(10,120,300,30);
+    frame.add(checkBox2);
+
+    JLabel label3 = new JLabel("Tipologia check-in: ");
+     label3.setBounds(10,145,300,30);
+     frame.add(label3);
+
+     JRadioButton radioButton=new JRadioButton("Check-in classico;");
+     radioButton.setBounds(10,165,300,40);
+     frame.add(radioButton);
+     JRadioButton radioButton2=new JRadioButton("Check-in Online");
+     radioButton2.setBounds(10,190,300,40);
+     frame.add(radioButton2);
+     //Crea il gruppo di bottoni
+     ButtonGroup buttonGroup= new ButtonGroup();
+     buttonGroup.add(radioButton); //aggiungere i radiobutton al gruppo
+     buttonGroup.add(radioButton2);
+
+     JLabel label4 = new JLabel("Note: ");
+     label4.setBounds(10,220,300,40);
+     frame.add(label4);
+
+    JTextArea textArea = new JTextArea();
+    textArea.setBounds(10,250,300,100);
+    frame.add(textArea);
+    JScrollPane scrollPane= new JScrollPane(textArea);//barra di scorrimento all'interno dell'area di testo 
+    scrollPane.setBounds(10,250,300,100);
+    frame.add(scrollPane);
+
+    JButton button = new JButton("Prenota!");
+    button.setBounds(10,370,100,40);
+    frame.add(button);
+    frame.setVisible(true);
+    }
+}
