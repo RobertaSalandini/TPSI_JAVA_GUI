@@ -59,3 +59,74 @@ panel.setBackground(Color.red);
 frame.add(panel);
 frame.setVisible(true);
     }}
+
+
+
+//bottone, etichetta, casella di testo, area di testo, pulsante di opzione, casella combinata.
+/*GUI ordinata 
+per posizionare i componenti all'interno della finestra con delle coordinate è necessario usare un layout manager diverso da FlowLayout, che li organizza in modo automatico a seconda del flusso
+se io metto null devo indicare manualmente la posizione*/
+
+import javax.swing.*;
+//import java.awt.*; 
+public class EsempioGUI2
+{
+    public static void main(String [] args)
+  {
+    JFrame frame= new JFrame("Finestra con bottoni");
+    frame.setSize(500, 400);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setLayout(null);//inserisco io le coordinate 
+
+    JLabel label = new JLabel("Etichetta");
+    label.setBounds(10,10,80,20);//inserimento manuale delle coordinate e dimensioni dell'etichetta
+                 //2coordinate|2dimensioni 
+    frame.add(label);
+
+    JButton button = new JButton("Bottone");
+    frame.add(button);
+    button.setBounds(100,10,80,20);
+    
+    JTextField textField = new JTextField("casella di testo:"); //casella di testo 
+    textField.setBounds(10,40,150,20);
+    frame.add(textField);
+    
+    JRadioButton radioButton=new JRadioButton("opzione1");
+    radioButton.setBounds(10,70,100,20);
+    frame.add(radioButton);
+    JRadioButton radioButton2=new JRadioButton("opzione2");
+    radioButton2.setBounds(120,70,100,20);
+    frame.add(radioButton2);
+    //Crea il gruppo di bottoni
+    ButtonGroup buttonGroup= new ButtonGroup();
+    buttonGroup.add(radioButton); //aggiungere i radiobutton al gruppo
+    buttonGroup.add(radioButton2);
+    //aggiungere i radiobutton al pannello
+    
+    //creazione checkbox= permette di flaggare una o entrambe le opzioni 
+    JCheckBox checkBox1= new JCheckBox("CheckBox1");
+    checkBox1.setBounds(10,240,100,20);
+    frame.add(checkBox1);
+    JCheckBox checkBox2= new JCheckBox("CheckBox2");
+    checkBox2.setBounds(120,240,100,20 );
+    frame.add(checkBox2);
+
+    //casella combinata = dinamica
+    String[] comboItems={"elemento 1", "elemento 2", "elemento 3"};
+    JComboBox<String> comboBox = new
+    JComboBox<>(comboItems);//dropdown
+    comboBox.setBounds(10,100,150,20);
+    frame.add(comboBox);//oggetto JComboBox con gli elementi dall'array 
+    //area di testo 
+    JTextArea textArea = new JTextArea("area di testo");
+    textArea.setBounds(10,160,30,30);
+    JScrollPane scrollPane= new JScrollPane(textArea);//barra di scorrimento all'interno dell'area di testo 
+    scrollPane.setBounds(10,130,300,100);
+    frame.add(scrollPane);
+    //impostazione del layout 
+    //frame.setLayout(new FlowLayout());----> posizione non ordinata 
+
+    frame.setVisible(true);
+  }    
+}
+
