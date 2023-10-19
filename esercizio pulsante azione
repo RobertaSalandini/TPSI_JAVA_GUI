@@ -1,0 +1,62 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+/* il tasto azione relativamente al bottone nel momento in cui si preme andrà a stampare 
+ * determinate info 
+ */
+public class Azione 
+{
+    public static void main(String[]args)
+    {   
+    JFrame frame= new JFrame("tasto azione", null);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setSize(300,300);
+    frame.setLayout(null);
+
+    JLabel nameLabel=new JLabel("Nome:");
+    nameLabel.setBounds(10,10,100,20);
+    frame.add(nameLabel);
+    JTextField textField = new JTextField();
+    textField.setBounds(100,10,100,20);
+    frame.add(textField);
+
+    JLabel surnameLabel=new JLabel("Cognome:");
+    surnameLabel.setBounds(10,35,100,20);
+    frame.add(surnameLabel);
+    JTextField surnameField= new JTextField(20);
+    JTextField textField2 = new JTextField();
+    textField2.setBounds(100,35,100,20);
+    frame.add(textField2);
+   /*oggetto di tipo button che verrà utilizzato per avviare un'azione quando premuto */
+    JButton actionButton = new JButton("Azione!", null);
+     actionButton.setBounds(50,65,100,20);
+    frame.add(actionButton);
+    /*imposta un ascoltatore di azione per il pulsante
+    l'ascoltatore è una classe anonima che implementa l'interfaccia ActionListener 
+    responsabile di gestire le azioni quando il pulsante viene premuto */
+   actionButton.addActionListener(new ActionListener (){
+
+/*@override  indica che si sta sovrascrivendo il metodo dell'interfaccia genitore. */
+@Override
+    /*il metodo actionPerformed è parte dell'interfaccia ActionListener e viene implementato nella 
+    classe anonima . Il metodo viene chiamato quando il pulsante viene premuto. Il parametro è un oggetto
+     di tipo ActionEvent che contiene le informazioni sul 
+    */ 
+    public void actionPerformed(ActionEvent e){
+        String name=textField.getText();//recupera quanto scritto nel campo di teto "nome" e lo salva nella stringa name
+        String surname= textField2.getText();//recupera quanto scritto nel campo di teto "cognome" e lo salva nella stringa surname
+        String message= "Ciao "+name+" "+surname+" !";
+        JOptionPane.showMessageDialog(frame, message);//mostra un messaggio di dialogo che contiene il testo specificato da message 
+    }
+   });
+
+
+
+
+
+
+
+    frame.setVisible(true);
+ }
+}
