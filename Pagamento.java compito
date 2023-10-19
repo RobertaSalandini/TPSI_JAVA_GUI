@@ -1,0 +1,77 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+public class Pagamento 
+{
+    public static void main(String[]args)
+    {   
+        JFrame frame= new JFrame("Esercizio pagamento");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500,350);
+        frame.setLayout(null);
+        JLabel label1=new JLabel("Pagamento:", null, 0);
+        label1.setBounds(0,0,100,30);
+        frame.add(label1);
+        JLabel label2=new JLabel("I campi obbligatori sono contrassegnati con *:", null, 0);
+        label2.setBounds(0,20,290,30);
+        frame.add(label2);
+        JLabel label3=new JLabel("Informazioni di contatto:", null, 0);
+        label3.setBounds(0,40,170,30);
+        frame.add(label3);
+         JLabel labelNome=new JLabel("nome e cognome: *", null, 0);
+        labelNome.setBounds(0,60,135,30);
+        frame.add(labelNome);
+        JTextField textField1= new JTextField(null, null, 0);
+        textField1.setBounds(130,65,135,20);
+        frame.add(textField1);
+         JLabel labelEmail=new JLabel("Email: * ", null, 0);
+        labelEmail.setBounds(0,80,70,30);
+        frame.add(labelEmail);
+        JTextField textField2= new JTextField(null, null, 0);
+        textField2.setBounds(130,85,135,20);
+        frame.add(textField2);
+         JLabel label4=new JLabel("Informazioni di pagamento:", null, 0);
+        label4.setBounds(0,100,185,30);
+        frame.add(label4);
+        JRadioButton via=new JRadioButton("Via", null, false);
+        via.setBounds(10,120,100,30);
+        frame.add(via);
+         JRadioButton masterCad=new JRadioButton("MasterCad", null, false);
+        masterCad.setBounds(10,140,100,30);
+        frame.add(masterCad);
+         JRadioButton postePay=new JRadioButton("PostePay", null, false);
+        postePay.setBounds(10,160,100,30);
+        frame.add(postePay);
+        JLabel label5=new JLabel("numero di carta: *", null, 0);
+        label5.setBounds(0,180,130,30);
+        frame.add(label5);
+         JTextField textField3= new JTextField(null, null, 0);
+        textField3.setBounds(130,188,135,20);
+        frame.add(textField3);
+        JLabel label6=new JLabel("Data di scadenza: *", null, 0);
+        label6.setBounds(0,200,130,30);
+        frame.add(label6);
+         JTextField textField4= new JTextField("dd/mm/yy");
+        textField4.setBounds(130,208,70,20);
+        frame.add(textField4);
+        JLabel label7=new JLabel("Interstatario: *", null, 0);
+        label7.setBounds(0,220,100,30);
+        frame.add(label7);
+         JTextField textField5= new JTextField();
+        textField5.setBounds(130,228,135,20);
+        frame.add(textField5);
+        JLabel label8=new JLabel("CVV: *", null, 0);
+        label8.setBounds(0,240,55,30);
+        frame.add(label8);
+        JTextField textField6= new JTextField();
+        textField6.setBounds(130,248,100,20);
+        frame.add(textField6);   
+        JButton button = new JButton("valida il pagamento", null);
+        button.setBounds(10,275,150,25);
+        frame.add(button);
+
+
+        frame.setVisible(true);
+    }
+}
